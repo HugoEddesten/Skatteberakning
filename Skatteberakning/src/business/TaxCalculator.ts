@@ -1,4 +1,5 @@
-import { TaxTable, TaxTableRow } from "../features/start/types/Table";
+import { SettingsFields } from "../features/start/components/Home";
+import { TaxTableRow } from "../features/start/types/Table";
 
 export class TaxCalculator {
     PBB: number = 58800;
@@ -15,8 +16,19 @@ export class TaxCalculator {
     XXGRUC5: number = -0.1;
     XXGRUB6: number = 0.293;
   
-    constructor() {
-    
+    constructor(settings: SettingsFields) {
+        this.PBB = settings.PBB
+        this.XXGRUB2 = settings.XXGRUB2
+        this.XXGRUA2 = settings.XXGRUA2
+        this.XXGRUA3 = settings.XXGRUA3
+        this.XXGRUB3 = settings.XXGRUB3
+        this.XXGRUC3 = settings.XXGRUC3
+        this.XXGRUA4 = settings.XXGRUA4
+        this.XXGRUB4 = settings.XXGRUB4
+        this.XXGRUA5 = settings.XXGRUA5
+        this.XXGRUB5 = settings.XXGRUB5
+        this.XXGRUC5 = settings.XXGRUC5
+        this.XXGRUB6 = settings.XXGRUB6
     }
   
     calculateAga(wage: number, interval: number, amount: number): TaxTableRow[] {
